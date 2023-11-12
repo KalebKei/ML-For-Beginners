@@ -25,14 +25,18 @@ while(userInput.lower() != "bye"):
         response = "Well, that sounds good. "
     elif user_input_blob.sentiment.polarity <= 1:
         response = "Wow, that sounds great. "
-    print(response)
 
-    print("*********************")
-    print(user_input_blob)
-    print(user_input_blob.sentiment)
-    print(user_input_blob.sentiment.polarity)
-    print(user_input_blob.noun_phrases)
-    print("*********************")
+    if(user_input_blob.noun_phrases != []):
+        response += "Tell me more about " + user_input_blob.noun_phrases[0].pluralize()
+    print(response)
+# https://textblob.readthedocs.io/en/dev/quickstart.html#create-a-textblob
+# DEBUG info
+    # print("*********************")
+    # print(user_input_blob)
+    # print(user_input_blob.sentiment)
+    # print(user_input_blob.sentiment.polarity)
+    # print(user_input_blob.noun_phrases)
+    # print("*********************")
     userInput = input()
 
 print("Have a great rest of your day!")
