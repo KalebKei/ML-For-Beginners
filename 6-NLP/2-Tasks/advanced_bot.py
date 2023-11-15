@@ -16,7 +16,7 @@ print("How are you doing today?")
 
 userInput = input()
 while(userInput.lower() != "bye"): 
-    user_input_blob = TextBlob(userInput).correct()
+    user_input_blob = TextBlob(userInput)
     if user_input_blob.sentiment.polarity <= -0.5:
         response = "Oh dear, that sounds bad. "
     elif user_input_blob.sentiment.polarity < 0:
